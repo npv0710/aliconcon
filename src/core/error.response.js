@@ -1,36 +1,30 @@
 'use strict'
 
-const HttpStatusCodes = {
-    FORBIDDEN: 403,
-    CONFLICT: 409,
-    NOT_FOUND: 404,
-    INTERNAL_SERVER_ERROR: 500,
-    BAD_REQUEST: 400
-}
-
-const ErrorMessage = {
-    FORBIDDEN: 'Forbidden',
-    CONFLICT: 'Conflict',
-    NOT_FOUND: 'Not Found',
-    INTERNAL_SERVER_ERROR: 'Internal Server Error',
-    BAD_REQUEST: 'Bad request'
-}
+const { HttpStatusCodes, ErrorNames } = require("../constants")
 
 class ErrorResponse extends Error {
-    constructor(message, status) {
+    constructor(name, status, message) {
         super(message)
+        this.name = name
         this.status = status
     }
 }
 
 class BadRequestError extends ErrorResponse {
-    constructor(message = ErrorMessage.BAD_REQUEST, status = HttpStatusCodes.BAD_REQUEST) {
-        super(message, status)
+    constructor(name = ErrorNames.BAD_REQUEST, status = HttpStatusCodes.BAD_REQUEST, message = '') {
+        super(name, status, message)
+    }
+}
+
+class NotFoundError extends ErrorResponse {
+    constructor(name = ErrorNames.NOT_FOUND, status = HttpStatusCodes.NOT_FOUND, message = '') {
+        super(name, status, message)
     }
 }
 
 module.exports = {
-    BadRequestError
+    BadRequestError,
+    NotFoundError
 }
 
 
