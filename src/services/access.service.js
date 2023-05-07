@@ -4,7 +4,11 @@ const bcrypt = require('bcrypt')
 const { userRole } = require('../constants')
 const crypto = require('crypto')
 const KeyTokenService = require('./keytoken.service')
-const { createTokenPair } = require('../auth/authUtils')
+const { createTokenPair } = require('../utils/authUtils')
+
+const {
+    BadRequestError
+} = require('../core/error.response')
 
 class AccessService {
 
@@ -13,18 +17,12 @@ class AccessService {
             // step1: check amail exists?
             const user = await userModel.findOne({ username }).lean()
             if (user) {
-                return {
-                    code: 'xxx',
-                    message: 'Username already registered!'
-                }
+                throw new BardRequestError('Username already registered!', 400)
             }
 
             const user2 = await userModel.findOne({ email }).lean()
             if (user2) {
-                return {
-                    code: 'xxx',
-                    message: 'Email already registered!'
-                }
+                throw new BardRequestError('Email already registered!', 400)
             }
 
             const passwordHash = await bcrypt.hash(password, 10)

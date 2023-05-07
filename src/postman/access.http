@@ -4,7 +4,7 @@ POST {{URL_DEV}}/user/signup
 Content-Type: application/json
 
 {
-    "username": "quanghai",
+    "username": "quanghai2",
     "email": "quanghai@gmail.com",
     "password": "123abc",
     "mobile": "0862515616"
