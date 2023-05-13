@@ -9,7 +9,9 @@ const HttpStatusCodes = {
     CONFLICT: 409,
     NOT_FOUND: 404,
     INTERNAL_SERVER_ERROR: 500,
-    BAD_REQUEST: 400
+    BAD_REQUEST: 400,
+    OK: 200,
+    CREATED: 201
 }
 
 const ErrorNames = {
@@ -20,8 +22,14 @@ const ErrorNames = {
     BAD_REQUEST: 'Bad request'
 }
 
+const SuccessResponseCode = {
+    CREATED: 'Created',
+    OK: 'Success'
+}
+
 module.exports = {
     userRole,
     HttpStatusCodes,
-    ErrorNames
+    ErrorNames,
+    SuccessResponseCode
 }
