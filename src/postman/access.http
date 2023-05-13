@@ -1,6 +1,6 @@
 @URL_DEV= http://localhost:8800/api/v1
 ###
-POST {{URL_DEV}}/user/signup1
+POST {{URL_DEV}}/user/signup
 Content-Type: application/json
 
 {
