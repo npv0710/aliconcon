@@ -10,13 +10,13 @@ class SuccessResponse {
         successResponseCode = SuccessResponseCode.OK,
         metaData = {}
     }) {
-        this.message = message
+        this.message = message ? message : successResponseCode
         this.status = statusCode
         this.metaData = metaData
     }
 
     send (res, headers = {}) {
-        return res.status(statusCode).json(this)
+        return res.status(this.status).json(this)
     }
 }
 
@@ -30,14 +30,28 @@ class CreatedResponse extends SuccessResponse {
     constructor({ message, 
         statusCode = HttpStatusCodes.CREATED,
         successResponseCode = SuccessResponseCode.CREATED,
-        metaData
+        metaData,
+        options = {}
     }) {
-        super({ message, statusCode, successResponseCode, metaData, options })
-        this.options = this.options
+        super({ message, statusCode, successResponseCode, metaData })
+        this.options = options
+    }
+}
+
+class SigninedResponse extends SuccessResponse {
+    constructor({ message, 
+        statusCode = HttpStatusCodes.OK,
+        successResponseCode = SuccessResponseCode.OK,
+        metaData,
+        options = {}
+    }) {
+        super({ message, statusCode, successResponseCode, metaData })
+        this.options = options
     }
 }
 
 module.exports = {
     OKResponse,
-    CreatedResponse
+    CreatedResponse,
+    SigninedResponse
 }

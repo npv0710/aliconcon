@@ -4,8 +4,17 @@ POST {{URL_DEV}}/user/signup
 Content-Type: application/json
 
 {
-    "username": "quanghai",
-    "email": "quanghai@gmail.com",
+    "username": "tuananh",
+    "email": "tuananh@gmail.com",
     "password": "123abc",
-    "mobile": "0862515616"
+    "mobile": "0902235500"
+}
+
+###
+POST {{URL_DEV}}/user/signin
+Content-Type: application/json
+
+{
+    "email": "tuananh@gmail.com",
+    "password": "123abc"
 }

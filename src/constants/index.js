@@ -11,7 +11,8 @@ const HttpStatusCodes = {
     INTERNAL_SERVER_ERROR: 500,
     BAD_REQUEST: 400,
     OK: 200,
-    CREATED: 201
+    CREATED: 201,
+    UNAUTHORIZED: 401
 }
 
 const ErrorNames = {
@@ -19,7 +20,8 @@ const ErrorNames = {
     CONFLICT: 'Conflict',
     NOT_FOUND: 'Not Found',
     INTERNAL_SERVER_ERROR: 'Internal Server Error',
-    BAD_REQUEST: 'Bad request'
+    BAD_REQUEST: 'Bad request',
+    UNAUTHORIZED: 'Unauthorized'
 }
 
 const SuccessResponseCode = {

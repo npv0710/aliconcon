@@ -40,7 +40,8 @@ app.use((err, req, res, next) => {
     return res.status(status).json({
         error_name: err.name,
         status: status,
-        message: err.message
+        message: err.message,
+        //metaData: err
     })
 })
 

@@ -34,6 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["express", "npm:4.18.2"],\
             ["helmet", "npm:6.2.0"],\
             ["jsonwebtoken", "npm:9.0.0"],\
+            ["lodash", "npm:4.17.21"],\
             ["mongoose", "npm:7.1.1"],\
             ["morgan", "npm:1.10.0"],\
             ["nodemon", "npm:2.0.22"]\
@@ -192,6 +193,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["express", "npm:4.18.2"],\
             ["helmet", "npm:6.2.0"],\
             ["jsonwebtoken", "npm:9.0.0"],\
+            ["lodash", "npm:4.17.21"],\
             ["mongoose", "npm:7.1.1"],\
             ["morgan", "npm:1.10.0"],\
             ["nodemon", "npm:2.0.22"]\
