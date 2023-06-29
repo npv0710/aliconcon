@@ -11,7 +11,11 @@ class ErrorResponse extends Error {
 }
 
 class BadRequestError extends ErrorResponse {
-    constructor({ name = ErrorNames.BAD_REQUEST, status = HttpStatusCodes.BAD_REQUEST, message = '' }) {
+    constructor({ 
+        name = ErrorNames.BAD_REQUEST, 
+        status = HttpStatusCodes.BAD_REQUEST, 
+        message = '' }) 
+    {
         super({ name, status, message })
     }
 }

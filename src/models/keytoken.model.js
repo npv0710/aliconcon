@@ -27,7 +27,7 @@ var keyTokenSchema = new Schema({
         required: true
     }
 }, {
-    collation: COLLECTION_NAME,
+    collection: COLLECTION_NAME,
     timestamps: true
 })
 
